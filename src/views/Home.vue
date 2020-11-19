@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="topnav">
-      <div class="logo"></div>
-      <div class="menu"></div>
-    </div>
+    <Topnav/>
     <div class="banner">
       <h1>fake-ui</h1>
       <h2>练习vue3用</h2>
@@ -15,9 +12,12 @@
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
+  import Topnav from '../components/Topnav.vue';
+
   export default {
-    name: "Home"
+    name: "Home",
+    components: {Topnav},
   }
 </script>
 
