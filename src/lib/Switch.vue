@@ -1,12 +1,10 @@
 <template>
-  <div>
-    Dialog 的文档
-  </div>
+  <div>Switch本体</div>
 </template>
 
 <script lang="ts">
   export default {
-    name: 'Dialog'
+    name: 'Switch'
   };
 </script>
 

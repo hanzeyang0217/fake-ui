@@ -1,12 +1,12 @@
 <template>
   <div>
-    Tabs 的文档
+    Button 的文档
   </div>
 </template>
 
 <script lang="ts">
   export default {
-    name: 'Tabs'
+    name: 'ButtonDemo'
   };
 </script>
 
