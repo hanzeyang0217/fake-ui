@@ -1,21 +1,22 @@
 <template>
   <div>Switch本体</div>
-  <button @click="toggle" :class="{checked}">
+  <button @click="toggle" :class="{checked:value}">
     <span></span>
   </button>
 </template>
 
 <script lang="ts">
-  import {ref} from 'vue';
 
   export default {
     name: 'Switch',
-    setup() {
-      const checked = ref(false);
+    props: {
+      value: Boolean
+    },
+    setup(props, context) {
       const toggle = () => {
-        checked.value = !checked.value;
+        context.emit('update:value', !props.value);
       };
-      return {checked, toggle};
+      return {toggle};
     }
   };
 </script>
@@ -49,6 +50,7 @@
       background: #1976d2;
       left: calc(100% - #{$h2} - 2px);
     }
+
     background-color: #8cbbe9;
   }
 
