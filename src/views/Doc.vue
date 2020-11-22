@@ -1,12 +1,12 @@
 <template>
   <div>
     <Topnav/>
-    <div v-if="menuVisible===true" class="content">
-      <aside>
+    <div class="content">
+      <aside v-if="menuVisible===true">
         <h2>组件列表</h2>
         <ol>
           <li>
-            <router-link to="/doc/swich">Switch 组件</router-link>
+            <router-link to="/doc/switch">Switch 组件</router-link>
           </li>
           <li>
             <router-link to="/doc/button">Button 组件</router-link>
@@ -19,7 +19,10 @@
           </li>
         </ol>
       </aside>
-      <main>主内容</main>
+      <main>
+        主文档
+        <router-view/>
+      </main>
     </div>
   </div>
 </template>
@@ -27,6 +30,8 @@
 <script lang="ts">
   import Topnav from '../components/Topnav.vue';
   import {provide, ref} from 'vue';
+  import {router} from '../router/router';
+  import {r} from '../lib/viewpointCheck';
 
   export default {
     name: 'Doc',
@@ -37,10 +42,17 @@
       * 1. 大屏幕的话menuVisible初始值为true
       * 2. 小屏幕的话menuVisible初始值为false
       */
-      const width = document.documentElement.clientWidth;
-      const value = width > 600;
-      const menuVisible = ref(value);
+
+      const menuVisible = ref(r.over600);
       provide('menuVisible', menuVisible);
+
+      router.afterEach(() => {
+        if (!r.over600){
+          menuVisible.value = false;
+        }
+      });
+
+
       return {
         menuVisible
       };
