@@ -1,7 +1,7 @@
 <template>
   <div>
     <Topnav/>
-    <div class="content">
+    <div v-if="menuVisible===true" class="content">
       <aside>
         <h2>组件列表</h2>
         <ol>
@@ -26,10 +26,25 @@
 
 <script lang="ts">
   import Topnav from '../components/Topnav.vue';
+  import {provide, ref} from 'vue';
 
   export default {
     name: 'Doc',
     components: {Topnav},
+    setup() {
+      /*
+      * 判断屏幕大小
+      * 1. 大屏幕的话menuVisible初始值为true
+      * 2. 小屏幕的话menuVisible初始值为false
+      */
+      const width = document.documentElement.clientWidth;
+      const value = width > 600;
+      const menuVisible = ref(value);
+      provide('menuVisible', menuVisible);
+      return {
+        menuVisible
+      };
+    }
   };
 </script>
 
@@ -42,13 +57,21 @@
     top: 0;
     left: 0;
     padding-top: 70px;
+
     > h2 {
       margin-bottom: 4px;
     }
+
     > ol {
       > li {
         padding: 4px 0;
       }
+    }
+  }
+
+  @media (max-width: 600px) {
+    aside {
+      /*display: none;*/
     }
   }
 </style>
