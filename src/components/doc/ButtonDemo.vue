@@ -25,9 +25,25 @@
         <Button theme="text" size="medium">medium</Button>
         <Button theme="text" size="large">large</Button>
       </div>
-
     </div>
-
+    <h1>示例3</h1>
+    <div>
+      <div>
+        <Button color="default">default</Button>
+        <Button color="primary">primary</Button>
+        <Button color="secondary">secondary</Button>
+      </div>
+      <div>
+        <Button theme="link" color="default">default</Button>
+        <Button theme="link" color="primary">primary</Button>
+        <Button theme="link" color="secondary">危险链接按钮</Button>
+      </div>
+      <div>
+        <Button theme="text" color="default">default</Button>
+        <Button theme="text" color="primary">primary</Button>
+        <Button theme="text" color="secondary">secondary</Button>
+      </div>
+    </div>
   </div>
 </template>
 

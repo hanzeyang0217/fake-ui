@@ -21,14 +21,24 @@
       size: {
         type: String,
         default: 'medium'
+      },
+      color: {
+        type: String,
+        default: 'default'
       }
     },
     setup(props, context) {
-      const {theme, size} = props;
+      const {
+        theme,
+        size,
+        color,
+      } = props;
+
       const classes = computed(() => {
         return {
           [`FuiButton-theme-${theme}`]: theme,
           [`FuiButton-size-${size}`]: size,
+          [`FuiButton-color-${color}`]: color,
         };
       });
       const {...rest} = context.attrs;
@@ -44,6 +54,7 @@
   $border-color: #d9d9d9;
   $color: #333;
   $blue: #40a9ff;
+  $red: red;
   $radius: 4px;
   .FuiButton-root {
     box-sizing: border-box;
@@ -59,6 +70,7 @@
     border: 1px solid $border-color;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black, 0.95);
+    transition: background 250ms;
 
     & + & {
       margin-left: 8px;
@@ -108,6 +120,63 @@
 
       &:hover, &:focus {
         background: darken(white, 5%);;
+      }
+    }
+
+    &.FuiButton-theme-button {
+      &.FuiButton-color-primary {
+        background: $blue;
+        color: white;
+        border-color: $blue;
+
+        &:hover,
+        &:focus {
+          background: darken($blue, 10%);
+          border-color: darken($blue, 10%);
+        }
+      }
+
+      &.FuiButton-color-secondary {
+        background: $red;
+        border-color: $red;
+        color: white;
+
+        &:hover,
+        &:focus {
+          background: darken($red, 10%);
+          border-color: darken($red, 10%);
+        }
+      }
+    }
+
+    &.FuiButton-theme-link {
+      &.FuiButton-color-secondary {
+        color: $red;
+
+        &:hover,
+        &:focus {
+          color: darken($red, 10%);
+        }
+      }
+    }
+
+    &.FuiButton-theme-text {
+      &.FuiButton-color-primary {
+        color: $blue;
+
+        &:hover,
+        &:focus {
+          color: darken($blue, 10%);
+        }
+      }
+
+      &.FuiButton-color-secondary {
+        color: $red;
+
+        &:hover,
+        &:focus {
+          color: darken($red, 10%);
+        }
       }
     }
   }
