@@ -2,10 +2,32 @@
   <div>
     Button 的文档
     <Button @click="click">hello</Button>
-    <Button>helloButton</Button>
-    <Button theme="button">helloButton</Button>
-    <Button theme="link">helloLinkButton</Button>
-    <Button theme="text">helloTextButton</Button>
+    <h1>示例1</h1>
+    <div>
+      <Button theme="button">button</Button>
+      <Button theme="link">link</Button>
+      <Button theme="text">text</Button>
+    </div>
+    <h1>示例2</h1>
+    <div>
+      <div>
+        <Button size="small">small</Button>
+        <Button size="medium">medium</Button>
+        <Button size="large">large</Button>
+      </div>
+      <div>
+        <Button theme="link" size="small">small</Button>
+        <Button theme="link" size="medium">medium</Button>
+        <Button theme="link" size="large">large</Button>
+      </div>
+      <div>
+        <Button theme="text" size="small">small</Button>
+        <Button theme="text" size="medium">medium</Button>
+        <Button theme="text" size="large">large</Button>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
@@ -19,7 +41,7 @@
       const click = () => {
         console.log('hi');
       };
-      return {click}
+      return {click};
     }
   };
 </script>

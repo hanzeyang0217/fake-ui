@@ -1,13 +1,15 @@
 <template>
   <button
     class="FuiButton-root"
-    :class="`theme-${theme}`"
+    :class="classes"
     :size="size" v-bind="rest">
     <slot/>
   </button>
 </template>
 
 <script lang="ts">
+  import {computed} from 'vue';
+
   export default {
     name: 'Button',
     inheritAttrs: false,
@@ -15,17 +17,29 @@
       theme: {
         type: String,
         default: 'button'
+      },
+      size: {
+        type: String,
+        default: 'medium'
       }
     },
     setup(props, context) {
-      const {size, ...rest} = context.attrs;
-      return {size, rest};
+      const {theme, size} = props;
+      const classes = computed(() => {
+        return {
+          [`FuiButton-theme-${theme}`]: theme,
+          [`FuiButton-size-${size}`]: size,
+        };
+      });
+      const {...rest} = context.attrs;
+      return {rest, classes};
     }
   };
 </script>
 
 <style lang="scss">
   @import "./Fui-common.scss";
+
   $h: 32px;
   $border-color: #d9d9d9;
   $color: #333;
@@ -62,6 +76,39 @@
 
     &::-moz-focus-inner {
       border: 0;
+    }
+
+
+    &.FuiButton-size-large {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px
+    }
+
+    &.FuiButton-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
+    }
+
+    &.FuiButton-theme-link {
+      border-color: transparent;
+      box-shadow: none;
+      color: $blue;
+
+      &:hover, &:focus {
+        color: lighten($blue, 10%);
+      }
+    }
+
+    &.FuiButton-theme-text {
+      border-color: transparent;
+      box-shadow: none;
+      color: inherit;
+
+      &:hover, &:focus {
+        background: darken(white, 5%);;
+      }
     }
   }
 </style>
