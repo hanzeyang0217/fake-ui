@@ -2,7 +2,9 @@
   <button
     class="FuiButton-root"
     :class="classes"
-    :size="size" v-bind="rest">
+    :size="size"
+    :disabled="disabled"
+    v-bind="rest">
     <slot/>
   </button>
 </template>
@@ -25,7 +27,11 @@
       color: {
         type: String,
         default: 'default'
-      }
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
     },
     setup(props, context) {
       const {
@@ -51,11 +57,12 @@
   @import "./Fui-common.scss";
 
   $h: 32px;
+  $radius: 4px;
   $border-color: #d9d9d9;
   $color: #333;
   $blue: #40a9ff;
   $red: red;
-  $radius: 4px;
+  $grey: grey;
   .FuiButton-root {
     box-sizing: border-box;
     height: $h;
@@ -177,6 +184,21 @@
         &:focus {
           color: darken($red, 10%);
         }
+      }
+    }
+    &.FuiButton-theme-button {
+      &[disabled] {
+        cursor: not-allowed;
+        color: $grey;
+        &:hover {
+          border-color: $grey;
+        }
+      }
+    }
+    &.FuiButton-theme-link, &.FuiButton-theme-text {
+      &[disabled] {
+        cursor: not-allowed;
+        color: $grey;
       }
     }
   }

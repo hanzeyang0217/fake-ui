@@ -44,6 +44,12 @@
         <Button theme="text" color="secondary">secondary</Button>
       </div>
     </div>
+    <h1>示例4</h1>
+    <div>
+      <Button disabled>disabled</Button>
+      <Button theme="link" disabled>disabled</Button>
+      <Button theme="text" disabled>disabled</Button>
+    </div>
   </div>
 </template>
 
