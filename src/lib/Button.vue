@@ -1,6 +1,6 @@
 <template>
   <button
-    class="base-button"
+    class="FuiButton-root"
     :class="`theme-${theme}`"
     :size="size" v-bind="rest">
     <slot/>
@@ -24,13 +24,14 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  @import "./Fui-common.scss";
   $h: 32px;
   $border-color: #d9d9d9;
   $color: #333;
   $blue: #40a9ff;
   $radius: 4px;
-  .base-button {
+  .FuiButton-root {
     box-sizing: border-box;
     height: $h;
     padding: 0 12px;

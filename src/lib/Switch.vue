@@ -1,6 +1,5 @@
 <template>
-  <div>Switch本体</div>
-  <button @click="toggle" :class="{checked:value}">
+  <button class="FuiSwitch-root" @click="toggle" :class="{'FuiSwitch-checked':value}">
     <span></span>
   </button>
 </template>
@@ -21,10 +20,11 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  @import "./Fui-common.scss";
   $h: 22px;
   $h2: $h - 4px;
-  button {
+  .FuiSwitch-root {
     height: $h;
     width: $h * 2;
     border: none;
@@ -43,7 +43,7 @@
       transition: all 250ms;
     }
 
-    &.checked {
+    &.FuiSwitch-checked {
       background: #1890ff;
 
       > span {
@@ -61,7 +61,7 @@
       }
     }
 
-    &.checked:active {
+    &.FuiSwitch-checked:active {
       > span {
         width: $h2 + 4px;
         margin-left: -4px;
