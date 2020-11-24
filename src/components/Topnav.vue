@@ -2,10 +2,9 @@
   <div class="topnav">
     <div class="logo">LOGO</div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>doc</li>
     </ul>
-    <span class="toggleAside" @click="toggleMenu">汉堡</span>
+    <span v-if="toggleAsideBtnVisible" class="toggleAside" @click="toggleMenu">汉堡</span>
   </div>
 </template>
 
@@ -14,6 +13,12 @@
 
   export default {
     name: 'Topnav',
+    props: {
+      toggleAsideBtnVisible: {
+        type: Boolean,
+        default: false
+      },
+    },
     setup() {
       const menuVisible = inject<Ref<boolean>>('menuVisible');
       const toggleMenu = () => {
@@ -28,7 +33,6 @@
 
 <style lang="scss" scoped>
   .topnav {
-    background: pink;
     display: flex;
     padding: 16px;
     position: fixed;
@@ -57,7 +61,6 @@
     > .toggleAside {
       width: 24px;
       height: 24px;
-      background: red;
       position: absolute;
       left: 16px;
       top: 50%;
