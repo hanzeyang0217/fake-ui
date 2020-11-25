@@ -1,10 +1,20 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <router-link to="/">
+      <div class="logo">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-VueLogo"></use>
+        </svg>
+      </div>
+    </router-link>
+
     <ul class="menu">
-      <li>doc</li>
     </ul>
-    <span v-if="toggleAsideBtnVisible" class="toggleAside" @click="toggleMenu">汉堡</span>
+    <span v-if="toggleAsideBtnVisible" class="toggleAside" @click="toggleMenu">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+    </span>
   </div>
 </template>
 
@@ -34,7 +44,7 @@
 <style lang="scss" scoped>
   .topnav {
     display: flex;
-    padding: 16px;
+    height: 40px;
     position: fixed;
     top: 0;
     left: 0;
@@ -43,9 +53,14 @@
     justify-content: center;
     align-items: center;
 
-    > .logo {
+    & .logo {
       max-width: 6em;
       margin-right: auto;
+
+      > svg {
+        height: 32px;
+        width: 32px;
+      }
     }
 
     > .menu {
@@ -77,6 +92,11 @@
       }
       > .toggleAside {
         display: inline-block;
+
+        > svg {
+          width: 24px;
+          height: 24px;
+        }
       }
     }
   }

@@ -12,7 +12,10 @@ a {
   text-decoration: none;
   color: #304455;
 }
-
+ul,
+ol {
+  list-style: none;
+}
 
 .icon {
   width: 1em;
