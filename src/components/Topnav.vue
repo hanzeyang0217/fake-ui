@@ -8,8 +8,6 @@
       </div>
     </router-link>
 
-    <ul class="menu">
-    </ul>
     <span v-if="toggleAsideBtnVisible" class="toggleAside" @click="toggleMenu">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-menu"></use>
@@ -60,6 +58,7 @@
       > svg {
         height: 32px;
         width: 32px;
+        cursor: pointer;
       }
     }
 
