@@ -118,6 +118,7 @@
     width: 120px;
     padding-top: 70px;
     position: fixed;
+    z-index: 1;
 
     > h2 {
       margin-bottom: 4px;
