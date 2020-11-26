@@ -120,12 +120,6 @@
     justify-content: center;
     align-items: center;
     font-size: 14px;
-    @media (min-width: 800px) {
-      /*width: 800px;*/
-    }
-    @media (min-width: 1200px) {
-      /*width: 1200px;*/
-    }
 
     > ul {
       display: flex;

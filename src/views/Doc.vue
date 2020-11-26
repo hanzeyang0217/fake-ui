@@ -1,26 +1,31 @@
 <template>
   <div class="layout">
-    <Topnav toggleAsideBtnVisible class="nav"/>
+    <Topnav
+      toggleAsideBtnVisible
+      underLine
+      class="nav"
+    />
     <div class="content">
-      <aside v-if="menuVisible===true">
+      <div v-if="menuVisible===true" class="sidebar-overlay" @click="closeSidebar"/>
+      <aside class="sidebar" :class="{menuVisible:menuVisible}">
         <ol>
           <li>
-            <router-link to="/doc/intro">intro</router-link>
+            <router-link to="/doc/intro">Intro</router-link>
           </li>
           <li>
-            <router-link to="/doc/install">install</router-link>
+            <router-link to="/doc/install">Install</router-link>
           </li>
           <li>
-            <router-link to="/doc/get-started">getStarted</router-link>
+            <router-link to="/doc/get-started">GetStarted</router-link>
           </li>
           <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
+            <router-link to="/doc/switch">Switch</router-link>
           </li>
           <li>
-            <router-link to="/doc/button">Button 组件</router-link>
+            <router-link to="/doc/button">Button</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
+            <router-link to="/doc/dialog">Dialog</router-link>
           </li>
         </ol>
       </aside>
@@ -54,9 +59,12 @@
           menuVisible.value = false;
         }
       });
+      const closeSidebar = () => {
+        menuVisible.value = false;
+      };
 
       return {
-        menuVisible
+        menuVisible, closeSidebar
       };
     }
   };
@@ -97,14 +105,17 @@
   }
 
   aside {
-    background: lightblue;
-    width: 150px;
-    padding: 16px;
+    background-color: #f9f9f9;
+    height: 100%;
     top: 0;
     left: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-transform: translate(-280px, 0);
+    transform: translate(-280px, 0);
+    width: 120px;
     padding-top: 70px;
     position: fixed;
-    height: 100%;
 
     > h2 {
       margin-bottom: 4px;
@@ -112,14 +123,36 @@
 
     > ol {
       > li {
-        padding: 4px 0;
+        > a {
+          display: block;
+          padding: 4px 12px;
+        }
+
+        .router-link-exact-active {
+          color: #42b983;
+        }
       }
     }
+  }
+
+  .sidebar.menuVisible {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 
   main {
     top: 0;
     overflow: auto;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background: rgba(0, 0, 0, 0.5);*/
+    z-index: 0;
   }
 
 </style>

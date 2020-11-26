@@ -1,5 +1,5 @@
 <template>
-  <div class="topnav">
+  <div class="topnav" :class="{underLine:underLine}">
     <router-link to="/">
       <div class="logo">
         <svg class="icon" aria-hidden="true">
@@ -26,6 +26,10 @@
         type: Boolean,
         default: false
       },
+      underLine: {
+        type: Boolean,
+        default: false
+      },
     },
     setup() {
       const menuVisible = inject<Ref<boolean>>('menuVisible');
@@ -40,6 +44,9 @@
 </script>
 
 <style lang="scss" scoped>
+  .underLine{
+    box-shadow: 0 0 2px rgba(0,0,0,0.25);
+  }
   .topnav {
     display: flex;
     height: 40px;
@@ -50,6 +57,7 @@
     z-index: 10;
     justify-content: center;
     align-items: center;
+    background-color: white;
 
     & .logo {
       max-width: 6em;
@@ -80,6 +88,7 @@
       top: 50%;
       transform: translateY(-50%);
       display: none;
+      cursor: pointer;
     }
 
     @media (max-width: 600px) {
