@@ -60,7 +60,9 @@
         }
       });
       const closeSidebar = () => {
-        menuVisible.value = false;
+        if (!r.over600) {
+          menuVisible.value = false;
+        }
       };
 
       return {
