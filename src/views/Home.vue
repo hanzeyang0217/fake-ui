@@ -5,7 +5,7 @@
       <h1>fake-ui</h1>
       <h3>a Vue UI library</h3>
       <p class="actions">
-        <router-link to="doc">GET STARTED</router-link>
+        <router-link to="/doc/intro">GET STARTED</router-link>
         <a class="github" href="https://github.com/hanzeyang0217/fake-ui">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github"></use>

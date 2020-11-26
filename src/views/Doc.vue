@@ -3,10 +3,15 @@
     <Topnav toggleAsideBtnVisible class="nav"/>
     <div class="content">
       <aside v-if="menuVisible===true">
-        <h2>组件列表</h2>
         <ol>
           <li>
+            <router-link to="/doc/intro">intro</router-link>
+          </li>
+          <li>
             <router-link to="/doc/install">install</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/get-started">getStarted</router-link>
           </li>
           <li>
             <router-link to="/doc/switch">Switch 组件</router-link>
@@ -20,7 +25,6 @@
         </ol>
       </aside>
       <main>
-        主文档
         <router-view/>
       </main>
     </div>
@@ -42,7 +46,6 @@
       * 1. 大屏幕的话menuVisible初始值为true
       * 2. 小屏幕的话menuVisible初始值为false
       */
-
       const menuVisible = ref(r.over600);
       provide('menuVisible', menuVisible);
 
@@ -51,7 +54,6 @@
           menuVisible.value = false;
         }
       });
-
 
       return {
         menuVisible
