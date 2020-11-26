@@ -84,8 +84,8 @@
 
     > .content {
       flex-grow: 1;
-      padding-top: 60px;
-      padding-left: 156px;
+      padding-top: 40px;
+      padding-left: 120px;
       @media (max-width: 600px) {
         padding-left: 0;
       }
