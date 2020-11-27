@@ -107,6 +107,9 @@
   }
 
   aside {
+    @media (min-width: 600px) {
+      box-shadow: none;
+    }
     background-color: #f9f9f9;
     height: 100%;
     top: 0;
