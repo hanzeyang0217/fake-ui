@@ -14,4 +14,4 @@ export default {
 </script>
 ```
 ## Component list
-At the moment only `Switch`,`Button`,`Dialog` are Supplied, you can see how to use them on their respective pages.
+At the moment only `Switch`,`Button`,`Dialog` are supplied, you can see how to use them on their respective pages.

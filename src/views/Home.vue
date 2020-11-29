@@ -19,9 +19,13 @@
     <div class="features">
       <ul>
         <li>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-Vue"></use>
-          </svg>
+          <a href="https://github.com/vuejs/vue-next/releases/tag/v3.0.0">
+            <img class="icon"
+                 src="https://user-images.githubusercontent.com/499550/93624428-53932780-f9ae-11ea-8d16-af949e16a09f.png"
+                 alt="vue3"
+            />
+          </a>
+
           <h3>Based on Vue3</h3>
           <p>used Vue3 Composition API</p>
         </li>
@@ -104,7 +108,7 @@
         position: relative;
         text-indent: 1.4em;
 
-        > svg {
+        > svg, img {
           position: absolute;
           left: 0.4em;
           top: 0.3em;
@@ -138,7 +142,7 @@
         grid-template-rows: 1fr auto;
         margin-right: 12px;
 
-        > svg {
+        > svg, img {
           grid-area: icon;
           width: 64px;
           height: 64px;
@@ -151,6 +155,9 @@
 
         > p {
           grid-area: text
+        }
+        a {
+          display: contents;
         }
       }
     }
