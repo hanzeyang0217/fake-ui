@@ -12,6 +12,7 @@ a {
   text-decoration: none;
   color: #304455;
 }
+
 ul,
 ol {
   list-style: none;
@@ -28,4 +29,15 @@ ol {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+
+.footerLinkDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+.footerLink {
+  color: #42b983;
 }

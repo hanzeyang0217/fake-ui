@@ -10,10 +10,10 @@
       <aside class="sidebar" :class="{menuVisible:menuVisible}">
         <ol>
           <li>
-            <router-link to="/doc/intro">Intro</router-link>
+            <router-link to="/doc/intro">Introduction</router-link>
           </li>
           <li>
-            <router-link to="/doc/install">Install</router-link>
+            <router-link to="/doc/install">Installation</router-link>
           </li>
           <li>
             <router-link to="/doc/get-started">GetStarted</router-link>

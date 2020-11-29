@@ -1,4 +1,4 @@
-# 开始使用
+# Getting Started
 请先[安装](#/doc/install)本组件库。
 
 然后在你的代码中写入下面的代码
