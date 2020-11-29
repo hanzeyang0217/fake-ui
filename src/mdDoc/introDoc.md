@@ -1,9 +1,9 @@
 # Introduction
-fake UI 是一款基于 Vue3 和 TypeScript 的 UI 组件库.
+`fake-ui` is a vue UI library which is based on `Vue3` and `TypeScript`.
 
-这款组件库其实是我为了 学习vue3 而写的.
+This component library was actually written by me to learn `vue3`.
 
-**所以强烈不建议你将此 UI 库用于生产环境**
+So **It is strongly discouraged to use this UI library in  production environment**.
 
 
 

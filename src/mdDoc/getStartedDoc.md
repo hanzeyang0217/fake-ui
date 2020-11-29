@@ -1,24 +1,11 @@
 # Getting Started
-请先[安装](#/doc/install)本组件库。
-
-然后在你的代码中写入下面的代码
-
-```
-import {Button, Switch, Dialog} from "fake-ui"
-```
-
-就可以使用我提供的组件了。
-
-## Vue 单文件组件
-
-代码示例：
+## Sample code in .vue
 
 ```
 <template>
-  <div>
-    <Button>按钮</Button>
-  </div>
+  <Button>click</Button>
 </template>
+
 <script>
 import {Button, Switch, Dialog} from "fake-ui"
 export default {
@@ -26,3 +13,5 @@ export default {
 }
 </script>
 ```
+## Component list
+At the moment only `Switch`,`Button`,`Dialog` are Supplied, you can see how to use them on their respective pages.
