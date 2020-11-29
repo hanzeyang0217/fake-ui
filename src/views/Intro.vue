@@ -1,23 +1,20 @@
 <template>
   <article class="markdown-body" v-html="md"/>
-  <footer class="footerLinkDiv">
-    <div/>
-    <div>
-      <router-link class="footerLink" to="/doc/install">Installation</router-link>
-      →
-    </div>
-  </footer>
-
+  <Footer
+    right="Installation"
+  />
 </template>
 
 <script lang="ts">
   import md from '../mdDoc/introDoc.md';
+  import Footer from '../components/Footer.vue';
 
   export default {
     name: 'Intro',
     data() {
       return {md};
-    }
+    },
+    components: {Footer},
   };
 </script>
 

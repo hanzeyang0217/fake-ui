@@ -20,6 +20,9 @@
     <h1>示例2</h1>
     <Button @click="showDialog">showDialog</Button>
   </div>
+  <Footer
+    left="Button Component"
+  />
 </template>
 
 <script lang="ts">
@@ -27,10 +30,11 @@
   import Button from '../../lib/Button.vue';
   import {openDialog} from '../../lib/openDialog';
   import {ref} from 'vue';
+  import Footer from '../Footer.vue';
 
   export default {
     name: 'DialogDemo',
-    components: {Button, Dialog},
+    components: {Button, Dialog, Footer},
     setup() {
       let dlgVisible = ref(false);
       const handleClickOpen = () => {
@@ -45,7 +49,7 @@
           header: 'headerTex',
           main: 'mainText',
           ok() {
-            return false
+            return false;
           },
           cancel() {}
         });

@@ -55,14 +55,19 @@
       <Button loading>loading</Button>
     </div>
   </div>
+  <Footer
+    left="Switch Component"
+    right="Dialog Component"
+  />
 </template>
 
 <script lang="ts">
   import Button from '../../lib/Button.vue';
+  import Footer from '../Footer.vue';
 
   export default {
     name: 'ButtonDemo',
-    components: {Button},
+    components: {Button,Footer},
     setup() {
       const click = () => {
         console.log('hi');

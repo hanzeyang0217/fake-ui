@@ -1,22 +1,21 @@
 <template>
   <article class="markdown-body" v-html="md"/>
-  <footer class="footerLinkDiv">
-    <div>
-      ←
-      <router-link class="footerLink" to="/doc/install">Installation</router-link>
-    </div>
-    <div/>
-  </footer>
+  <Footer
+    left="Installation"
+    right="Switch Component"
+  />
 </template>
 
 <script lang="ts">
   import md from '../mdDoc/getStartedDoc.md';
+  import Footer from '../components/Footer.vue';
 
   export default {
     name: 'GetStarted',
     data() {
       return {md};
-    }
+    },
+    components: {Footer},
   };
 </script>
 
