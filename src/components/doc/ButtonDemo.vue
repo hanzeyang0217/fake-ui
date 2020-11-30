@@ -15,13 +15,7 @@
         <Button color="secondary">secondary</Button>
         <Button disabled>disabled</Button>
       </div>
-      <span @click="changeSourceSize">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-zuoyou"></use>
-        </svg>
-      </span>
-      <article v-if="showFullSource" class="markdown-body" v-html="containedButtonShortMD"/>
-      <article v-else class="markdown-body" v-html="containedButtonMD"/>
+      <MarkDown :full="containedButtonMD" :short="containedButtonShortMD"/>
     </div>
     <div>
       <h1>Text Button</h1>
@@ -72,12 +66,12 @@
   import sizeButtonMD from '../../mdDoc/buttonDemoDoc/size-button.md';
   import Button from '../../lib/Button.vue';
   import Footer from '../Footer.vue';
-  import {ref} from 'vue';
+  import MarkDown from '../MarkDown.vue';
 
 
   export default {
     name: 'ButtonDemo',
-    components: {Button, Footer},
+    components: {Button, Footer, MarkDown},
     data() {
       return {
         basicButtonMD,
@@ -92,12 +86,7 @@
       const click = () => {
         console.log('Do something after the button is clicked');
       };
-      const showFullSource = ref(false);
-      const changeSourceSize = () => {
-        showFullSource.value = !showFullSource.value;
-        console.log(showFullSource.value);
-      };
-      return {click, changeSourceSize, showFullSource};
+      return {click};
     }
   };
 </script>
