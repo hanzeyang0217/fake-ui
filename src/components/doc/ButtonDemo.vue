@@ -1,9 +1,12 @@
 <template>
   <div>
-    Button 的文档
-    <Button @click="click">hello</Button>
+    <h1>Basic Button</h1>
+    <div class="demoBox">
+      <Button @click="click">Basic Button</Button>
+    </div>
+    <article class="markdown-body" v-html="md"/>
     <h1>示例1</h1>
-    <div>
+    <div class="demoBox">
       <Button theme="button">button</Button>
       <Button theme="link">link</Button>
       <Button theme="text">text</Button>
@@ -62,15 +65,19 @@
 </template>
 
 <script lang="ts">
+  import md from '../../mdDoc/buttonDemoDoc/buttonDemoDoc-basic-button.md';
   import Button from '../../lib/Button.vue';
   import Footer from '../Footer.vue';
 
   export default {
     name: 'ButtonDemo',
-    components: {Button,Footer},
+    components: {Button, Footer},
+    data() {
+      return {md};
+    },
     setup() {
       const click = () => {
-        console.log('hi');
+        console.log('Do something after the button is clicked');
       };
       return {click};
     }
