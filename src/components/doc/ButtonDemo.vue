@@ -1,61 +1,54 @@
 <template>
   <div>
-    <h1>Basic Button</h1>
-    <div class="demoBox">
-      <Button @click="click">Basic Button</Button>
-    </div>
-    <article class="markdown-body" v-html="md"/>
-    <h1>示例1</h1>
-    <div class="demoBox">
-      <Button theme="button">button</Button>
-      <Button theme="link">link</Button>
-      <Button theme="text">text</Button>
-    </div>
-    <h1>示例2</h1>
     <div>
-      <div>
-        <Button size="small">small</Button>
-        <Button size="medium">medium</Button>
-        <Button size="large">large</Button>
+      <h1>Basic Button</h1>
+      <div class="demoBox">
+        <Button @click="click">Basic Button</Button>
       </div>
-      <div>
-        <Button theme="link" size="small">small</Button>
-        <Button theme="link" size="medium">medium</Button>
-        <Button theme="link" size="large">large</Button>
-      </div>
-      <div>
-        <Button theme="text" size="small">small</Button>
-        <Button theme="text" size="medium">medium</Button>
-        <Button theme="text" size="large">large</Button>
-      </div>
+      <article class="markdown-body" v-html="basicButtonMD"/>
     </div>
-    <h1>示例3</h1>
     <div>
-      <div>
+      <h1>Contained Button</h1>
+      <div class="demoBox">
         <Button color="default">default</Button>
         <Button color="primary">primary</Button>
         <Button color="secondary">secondary</Button>
+        <Button disabled>disabled</Button>
       </div>
-      <div>
-        <Button theme="link" color="default">default</Button>
-        <Button theme="link" color="primary">primary</Button>
-        <Button theme="link" color="secondary">危险链接按钮</Button>
-      </div>
-      <div>
+      <article class="markdown-body" v-html="containedButtonMD"/>
+    </div>
+    <div>
+      <h1>Text Button</h1>
+      <div class="demoBox">
         <Button theme="text" color="default">default</Button>
         <Button theme="text" color="primary">primary</Button>
         <Button theme="text" color="secondary">secondary</Button>
+        <Button theme="text" disabled>disabled</Button>
       </div>
+      <article class="markdown-body" v-html="textButtonMD"/>
     </div>
-    <h1>示例4</h1>
     <div>
-      <Button disabled>disabled</Button>
-      <Button theme="link" disabled>disabled</Button>
-      <Button theme="text" disabled>disabled</Button>
+      <h1>Loading Button</h1>
+      <div class="demoBox">
+        <Button loading>loading</Button>
+      </div>
+      <article class="markdown-body" v-html="loadingButtonMD"/>
     </div>
-    <h1>示例5</h1>
     <div>
-      <Button loading>loading</Button>
+      <h1>Size</h1>
+      <div class="demoBox">
+        <div>
+          <Button theme="text" size="small">small</Button>
+          <Button theme="text" size="medium">medium</Button>
+          <Button theme="text" size="large">large</Button>
+        </div>
+        <div>
+          <Button color="primary" size="small">small</Button>
+          <Button color="primary" size="medium">medium</Button>
+          <Button color="primary" size="large">large</Button>
+        </div>
+      </div>
+      <article class="markdown-body" v-html="sizeButtonMD"/>
     </div>
   </div>
   <Footer
@@ -65,7 +58,11 @@
 </template>
 
 <script lang="ts">
-  import md from '../../mdDoc/buttonDemoDoc/buttonDemoDoc-basic-button.md';
+  import basicButtonMD from '../../mdDoc/buttonDemoDoc/basic-button.md';
+  import containedButtonMD from '../../mdDoc/buttonDemoDoc/contained-button.md';
+  import textButtonMD from '../../mdDoc/buttonDemoDoc/text-button.md';
+  import loadingButtonMD from '../../mdDoc/buttonDemoDoc/loading-button.md';
+  import sizeButtonMD from '../../mdDoc/buttonDemoDoc/size-button.md';
   import Button from '../../lib/Button.vue';
   import Footer from '../Footer.vue';
 
@@ -73,7 +70,13 @@
     name: 'ButtonDemo',
     components: {Button, Footer},
     data() {
-      return {md};
+      return {
+        basicButtonMD,
+        containedButtonMD,
+        textButtonMD,
+        loadingButtonMD,
+        sizeButtonMD,
+      };
     },
     setup() {
       const click = () => {
@@ -85,5 +88,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+  button {
+    margin: 4px;
+  }
 </style>

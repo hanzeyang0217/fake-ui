@@ -36,6 +36,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1em;
+    margin-bottom: 0.5em;
     padding-top: 1em;
   }
 
