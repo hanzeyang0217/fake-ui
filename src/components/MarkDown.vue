@@ -44,10 +44,15 @@
   .toolbar {
     display: flex;
     justify-content: flex-end;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    @media (min-width: 600px) {
+      justify-content: end;
+    }
 
     > span {
-      margin-bottom: 8px;
-      margin-right: 8px;
+      margin: 8px;
+      cursor: pointer;
     }
   }
 </style>
