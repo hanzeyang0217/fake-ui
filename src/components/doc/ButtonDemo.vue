@@ -5,7 +5,7 @@
       <div class="demoBox">
         <Button @click="click">Basic Button</Button>
       </div>
-      <article class="markdown-body" v-html="basicButtonMD"/>
+      <MarkDown :short="basicButtonMD" :ToolBarVisible="false"/>
     </div>
     <div>
       <h1>Contained Button</h1>
@@ -25,14 +25,14 @@
         <Button theme="text" color="secondary">secondary</Button>
         <Button theme="text" disabled>disabled</Button>
       </div>
-      <article class="markdown-body" v-html="textButtonMD"/>
+      <MarkDown :full="textButtonMD" :short="textButtonShortMD"/>
     </div>
     <div>
       <h1>Loading Button</h1>
       <div class="demoBox">
         <Button loading>loading</Button>
       </div>
-      <article class="markdown-body" v-html="loadingButtonMD"/>
+      <MarkDown :full="loadingButtonMD" :short="loadingButtonShortMD"/>
     </div>
     <div>
       <h1>Size</h1>
@@ -48,7 +48,7 @@
           <Button color="primary" size="large">large</Button>
         </div>
       </div>
-      <article class="markdown-body" v-html="sizeButtonMD"/>
+      <MarkDown :full="sizeButtonMD" :short="sizeButtonShortMD"/>
     </div>
   </div>
   <Footer
@@ -62,8 +62,11 @@
   import containedButtonMD from '../../mdDoc/buttonDemoDoc/contained-button.md';
   import containedButtonShortMD from '../../mdDoc/buttonDemoDoc/contained-button-short.md';
   import textButtonMD from '../../mdDoc/buttonDemoDoc/text-button.md';
+  import textButtonShortMD from '../../mdDoc/buttonDemoDoc/text-button-short.md';
   import loadingButtonMD from '../../mdDoc/buttonDemoDoc/loading-button.md';
+  import loadingButtonShortMD from '../../mdDoc/buttonDemoDoc/loading-button-short.md';
   import sizeButtonMD from '../../mdDoc/buttonDemoDoc/size-button.md';
+  import sizeButtonShortMD from '../../mdDoc/buttonDemoDoc/size-button-short.md';
   import Button from '../../lib/Button.vue';
   import Footer from '../Footer.vue';
   import MarkDown from '../MarkDown.vue';
@@ -78,8 +81,11 @@
         containedButtonMD,
         containedButtonShortMD,
         textButtonMD,
+        textButtonShortMD,
         loadingButtonMD,
+        loadingButtonShortMD,
         sizeButtonMD,
+        sizeButtonShortMD,
       };
     },
     setup() {

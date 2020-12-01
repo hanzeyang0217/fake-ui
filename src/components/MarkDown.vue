@@ -1,5 +1,5 @@
 <template>
-  <div class="toolbar">
+  <div class="toolbar" v-if="ToolBarVisible">
     <span @click="changeSourceSize">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-zuoyou"></use>
@@ -17,8 +17,18 @@
   export default {
     name: 'MarkDown',
     props: {
-      short: {},
-      full: {},
+      short: {
+        type: String,
+        default: ''
+      },
+      full: {
+        type: String,
+        default: ''
+      },
+      ToolBarVisible: {
+        type: Boolean,
+        default: true
+      }
     },
     setup() {
       const showFullSource = ref(false);
@@ -34,8 +44,10 @@
   .toolbar {
     display: flex;
     justify-content: flex-end;
+
     > span {
       margin-bottom: 8px;
+      margin-right: 8px;
     }
   }
 </style>
