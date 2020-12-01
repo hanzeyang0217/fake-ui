@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-  import md from '../../mdDoc/switchDemoDoc.md';
+  import md from '../../mdDoc/switchDemoDoc/switchDemoDoc.md';
   import Switch from '../../lib/Switch.vue';
   import {ref} from 'vue';
   import Footer from '../Footer.vue';
