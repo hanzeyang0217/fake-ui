@@ -10,6 +10,9 @@ import Intro from '../views/Intro.vue';
 
 const history = createWebHashHistory();
 export const router = createRouter({
+  scrollBehavior() {
+    return { top: 0};
+  },
   history: history,
   routes: [
     {
@@ -28,5 +31,5 @@ export const router = createRouter({
         {name: 'Dialog Component', path: 'dialog', component: Dialog},
       ]
     },
-  ]
+  ],
 });
