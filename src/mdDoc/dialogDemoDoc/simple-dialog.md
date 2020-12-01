@@ -28,6 +28,7 @@
         dlgVisible.value = !dlgVisible.value;
       };
       const handleDlgOkClick = () => {
+        //if return false the dialog cannot be turned off.
         return false;
       };
       return {handleClickOpen, dlgVisible, handleDlgOkClick};

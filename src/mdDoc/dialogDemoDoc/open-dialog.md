@@ -16,6 +16,7 @@
           header: 'headerTex',
           main: 'mainText',
           ok() {
+            //if return false the dialog cannot be turned off.
             return false;
           },
           cancel() {}
