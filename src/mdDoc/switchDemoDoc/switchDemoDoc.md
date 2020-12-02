@@ -1,4 +1,4 @@
-```markdown
+```html
 <template>
   <Switch v-model:value="value"/>
 </template>

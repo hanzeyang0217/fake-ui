@@ -1,4 +1,4 @@
-```markdown
+```html
 <Button color="default">default</Button>
 <Button color="primary">primary</Button>
 <Button color="secondary">secondary</Button>

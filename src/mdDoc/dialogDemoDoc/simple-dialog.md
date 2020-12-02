@@ -1,4 +1,4 @@
-```markdown
+```html
 <template>
   <Button @click="handleClickOpen">Open simple dialog</Button>
   <Dialog

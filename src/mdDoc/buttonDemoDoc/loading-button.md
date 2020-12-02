@@ -1,4 +1,4 @@
-```markdown
+```html
 <template>
   <Button loading>loading</Button>
 </template>

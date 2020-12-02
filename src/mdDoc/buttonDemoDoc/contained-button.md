@@ -1,4 +1,4 @@
-```markdown
+```html
 <template>
   <Button color="default">default</Button>
   <Button color="primary">primary</Button>

@@ -40,7 +40,8 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  @import "../assets/style/vueStyle.css";
   .toolbar {
     display: flex;
     justify-content: flex-end;

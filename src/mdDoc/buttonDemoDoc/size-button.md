@@ -1,4 +1,4 @@
-```markdown
+```html
 <template>
   <div>
     <Button theme="text" size="small">small</Button>

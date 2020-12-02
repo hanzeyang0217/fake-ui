@@ -1,4 +1,4 @@
-```markdown
+```html
 <template>
   <Button @click="showDialog">showDialog</Button>
 </template>

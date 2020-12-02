@@ -1,7 +1,7 @@
 # Getting Started
 ## Sample code in .vue
 
-```
+```html
 <template>
   <Button>click</Button>
 </template>

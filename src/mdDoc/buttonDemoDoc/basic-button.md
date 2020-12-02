@@ -1,4 +1,4 @@
-```markdown
+```html
 <template>
   <Button @click="click">Basic Button</Button>
 </template>
