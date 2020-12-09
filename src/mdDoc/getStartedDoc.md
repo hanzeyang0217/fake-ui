@@ -10,9 +10,9 @@
   import { Button } from "fake-ui";
   import "fake-ui/dist/lib/fake-ui.css";
 
-export default {
-  components: {Button}
-}
+  export default {
+    components: {Button}
+  }
 </script>
 ```
 ## Component list
