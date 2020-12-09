@@ -49,13 +49,13 @@
         context.emit('update:dlgVisible', !props.dlgVisible);
       };
       const ok = () => {
-        if (props.ok?.() !== false) {
+        if (props.ok && props.ok() !== false) {
           closeDlg();
         }
         context.emit('ok',);
       };
       const cancel = () => {
-        if (props.cancel?.() !== false) {
+        if (props.cancel && props.cancel() !== false) {
           closeDlg();
         }
         context.emit('cancel',);
