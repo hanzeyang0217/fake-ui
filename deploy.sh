@@ -24,3 +24,9 @@ git commit -m 'deploy'
 git push -f git@github.com:hanzeyang0217/fake-ui.git master:gh-pages
 
 cd -
+
+# 打包
+rollup -c
+
+# 发布
+npm publish

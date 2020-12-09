@@ -2,7 +2,9 @@
   "name": "fake-ui",
   "version": "0.0.4",
   "license": "MIT",
-  "files": ["dist/lib/*"],
+  "files": [
+    "dist/lib/*"
+  ],
   "main": "dist/lib/fake-ui.js",
   "scripts": {
     "dev": "vite",

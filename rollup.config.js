@@ -16,7 +16,7 @@ export default {
     plugins: [terser()]
   },
   plugins: [
-    scss({ include: /\.scss$/, sass: dartSass }),
+    scss({include: /\.scss$/, sass: dartSass}),
     esbuild({
       include: /\.[jt]s$/,
       minify: process.env.NODE_ENV === 'production',

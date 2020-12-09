@@ -25,6 +25,7 @@
   $h: 22px;
   $h2: $h - 4px;
   .FuiSwitch-root {
+    cursor: pointer;
     height: $h;
     width: $h * 2;
     border: none;
