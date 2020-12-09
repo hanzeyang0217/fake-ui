@@ -4,17 +4,18 @@
 </template>
 
 <script lang="ts">
-  import Dialog from '../../lib/Dialog.vue';
-  import Button from '../../lib/Button.vue';
-  import {openDialog} from '../../lib/openDialog';
+  import { Dialog, Button, openDialog } from "fake-ui";
+  import "fake-ui/dist/lib/fake-ui.css";
 
   export default {
     components: {Button, Dialog},
     setup() {
       const showDialog = () => {
         openDialog({
-          header: 'headerTex',
-          main: 'mainText',
+          //set header text
+          header: "headerTex",
+          //set main text
+          main: "mainText",
           ok() {
             //if return false the dialog cannot be turned off.
             return false;

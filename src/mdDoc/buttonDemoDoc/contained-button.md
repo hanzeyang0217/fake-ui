@@ -6,8 +6,9 @@
   <Button disabled>disabled</Button>
 </template>
 
-<script lang="ts">
-  import Button from '../../lib/Button.vue';
+<script>
+  import { Button } from "fake-ui";
+  import "fake-ui/dist/lib/fake-ui.css";
  
   export default {
     components: {Button},

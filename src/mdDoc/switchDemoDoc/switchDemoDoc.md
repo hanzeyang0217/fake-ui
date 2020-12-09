@@ -4,12 +4,14 @@
 </template>
 
 <script lang="ts">
-  import {ref} from 'vue';
-  import Switch from '../../lib/Switch.vue';
+  import { Switch } from "fake-ui";
+  import "fake-ui/dist/lib/fake-ui.css";
+  import { ref } from "vue";
  
   export default {
     components: {Switch},
     setup() {
+      //init value
       let value = ref(false);
       return {value};
     }

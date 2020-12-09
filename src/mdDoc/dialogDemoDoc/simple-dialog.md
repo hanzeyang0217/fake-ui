@@ -16,9 +16,9 @@
 </template>
 
 <script lang="ts">
-  import Dialog from '../../lib/Dialog.vue';
-  import Button from '../../lib/Button.vue';
-  import {ref} from 'vue';
+  import { Dialog, Button } from "fake-ui";
+  import "fake-ui/dist/lib/fake-ui.css";
+  import { ref } from "vue";
 
   export default {
     components: {Button, Dialog},
