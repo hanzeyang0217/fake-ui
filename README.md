@@ -7,6 +7,4 @@
 
 A UI library based on Vue3 & TypeScript, covering Button, Switch. And other common UI components.
 ```
-- [docs](https://hanzeyang0217.github.io/fake-ui/index.html)
-- [npm](https://www.npmjs.com/package/fake-ui)
-- License: [MIT](https://opensource.org/licenses/MIT)
+[docs](https://hanzeyang0217.github.io/fake-ui/index.html)
